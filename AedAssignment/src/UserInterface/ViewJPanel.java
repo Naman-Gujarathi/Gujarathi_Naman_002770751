@@ -64,6 +64,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         ViewJPanelTextFieldContactNumber = new javax.swing.JTextField();
         ViewJPanelTextFieldPositionTitle = new javax.swing.JTextField();
         ViewJPanelTextFieldLevel = new javax.swing.JTextField();
+        ViewJPanelButtonClear = new javax.swing.JButton();
+        ViewJPanelButtonUpdate = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -130,6 +132,20 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        ViewJPanelButtonClear.setText("Clear");
+        ViewJPanelButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewJPanelButtonClearActionPerformed(evt);
+            }
+        });
+
+        ViewJPanelButtonUpdate.setText("Update");
+        ViewJPanelButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewJPanelButtonUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,11 +156,15 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(388, 388, 388)
+                        .addGap(211, 211, 211)
+                        .addComponent(ViewJPanelButtonUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ViewJPanelButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ViewJPanelView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ViewJPanelDelete)
-                        .addContainerGap(516, Short.MAX_VALUE))))
+                        .addContainerGap(546, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,8 +231,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ViewJPanelView)
-                            .addComponent(ViewJPanelDelete))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                            .addComponent(ViewJPanelDelete)
+                            .addComponent(ViewJPanelButtonClear)
+                            .addComponent(ViewJPanelButtonUpdate))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(ViewJPanelName)
@@ -223,7 +245,6 @@ public class ViewJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(ViewJPanelTextFieldEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ViewJPanelEmployeeID))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -292,9 +313,75 @@ public class ViewJPanel extends javax.swing.JPanel {
  
     }//GEN-LAST:event_ViewJPanelViewActionPerformed
 
+    private void ViewJPanelButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewJPanelButtonUpdateActionPerformed
+int selectedRowIndex = ViewJPanelTable.getSelectedRow();
+        
+        if (selectedRowIndex<0) {
+            JOptionPane.showMessageDialog(this,"Please select a row to be updated");
+            return;
+        }
+        DefaultTableModel model = (DefaultTableModel) ViewJPanelTable.getModel();
+        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex, 0);
+        
+        String empName = model.getValueAt(selectedRowIndex,0).toString();
+        String empId = model.getValueAt(selectedRowIndex,1).toString();
+        String empAge = model.getValueAt(selectedRowIndex,2).toString();
+        String empGender = model.getValueAt(selectedRowIndex, 3).toString();
+        String empStartDate = model.getValueAt(selectedRowIndex,4).toString();
+        String empContactNumber = model.getValueAt(selectedRowIndex,5).toString();
+        String empEmail = model.getValueAt(selectedRowIndex,6).toString();
+        String empLevel = model.getValueAt(selectedRowIndex,7).toString();
+        String empPositionTitle = model.getValueAt(selectedRowIndex,8).toString();
+        String empTeamInfo = model.getValueAt(selectedRowIndex,9).toString();
+        
+        String newEmpName = JOptionPane.showInputDialog(null, "Enter the new name",empName);
+        String newEmpId = JOptionPane.showInputDialog(null, "Enter the new ID",empId);
+        String newEmpAge = JOptionPane.showInputDialog(null, "Enter the new age",empAge);
+        String newEmpGender = JOptionPane.showInputDialog(null, "Enter the new gender",empGender);
+        String newEmpDate = JOptionPane.showInputDialog(null, "Enter the new date",empStartDate);
+        String newEmpContactNumber = JOptionPane.showInputDialog(null, "Enter the new number",empContactNumber);
+        String newEmpEmail = JOptionPane.showInputDialog(null, "Enter the new email",empEmail);
+        String newEmpLevel = JOptionPane.showInputDialog(null, "Enter the new level",empLevel);
+        String newEmpPositionTitle = JOptionPane.showInputDialog(null, "Enter the new position title",empPositionTitle);
+        String newEmpTeamInfo = JOptionPane.showInputDialog(null, "Enter the New Team Info",empTeamInfo);
+        
+        model.setValueAt(newEmpName, selectedRowIndex, 0);
+        model.setValueAt(newEmpId, selectedRowIndex, 1);
+        model.setValueAt(newEmpAge, selectedRowIndex, 2);
+        model.setValueAt(newEmpGender, selectedRowIndex, 3);
+        model.setValueAt(newEmpDate, selectedRowIndex, 4);
+        model.setValueAt(newEmpContactNumber, selectedRowIndex, 5);
+        model.setValueAt(newEmpEmail, selectedRowIndex, 6);
+        model.setValueAt(newEmpLevel, selectedRowIndex, 7);
+        model.setValueAt(newEmpPositionTitle, selectedRowIndex, 8);
+        model.setValueAt(newEmpTeamInfo, selectedRowIndex, 9);
+        
+        
+        JOptionPane.showMessageDialog(this,"Selected row has been updated.");        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ViewJPanelButtonUpdateActionPerformed
+
+    private void ViewJPanelButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewJPanelButtonClearActionPerformed
+
+        ViewJPanelTextFieldName.setText("");
+        ViewJPanelTextFieldEmployeeID.setText("");
+        ViewJPanelTextFieldAge.setText("");
+        ViewJPanelTextFieldGender.setText("");
+        ViewJPanelTextFieldStartDate.setText("");
+        ViewJPanelTextFieldContactNumber.setText("");
+        ViewJPanelTextFieldEmailID.setText("");
+        ViewJPanelTextFieldLevel.setText("");
+        ViewJPanelTextFieldPositionTitle.setText("");
+        ViewJPanelTextFieldTeamInfo.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ViewJPanelButtonClearActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ViewJPanelAge;
+    private javax.swing.JButton ViewJPanelButtonClear;
+    private javax.swing.JButton ViewJPanelButtonUpdate;
     private javax.swing.JLabel ViewJPanelContactNumber;
     private javax.swing.JButton ViewJPanelDelete;
     private javax.swing.JLabel ViewJPanelEmailID;

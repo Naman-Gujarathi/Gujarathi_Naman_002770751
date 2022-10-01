@@ -22,11 +22,15 @@
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="388" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                      <Component id="ViewJPanelButtonUpdate" min="-2" pref="71" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ViewJPanelButtonClear" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="ViewJPanelView" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="ViewJPanelDelete" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="516" max="32767" attributes="0"/>
+                      <EmptySpace pref="546" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -112,8 +116,10 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ViewJPanelView" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ViewJPanelDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ViewJPanelButtonClear" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ViewJPanelButtonUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="94" max="32767" attributes="0"/>
+                      <EmptySpace pref="106" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="ViewJPanelName" min="-2" max="-2" attributes="0"/>
@@ -339,6 +345,22 @@
     <Component class="javax.swing.JTextField" name="ViewJPanelTextFieldPositionTitle">
     </Component>
     <Component class="javax.swing.JTextField" name="ViewJPanelTextFieldLevel">
+    </Component>
+    <Component class="javax.swing.JButton" name="ViewJPanelButtonClear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewJPanelButtonClearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ViewJPanelButtonUpdate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewJPanelButtonUpdateActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
