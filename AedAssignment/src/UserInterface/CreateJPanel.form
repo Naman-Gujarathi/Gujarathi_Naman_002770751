@@ -21,15 +21,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabelPositionTitle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabelTeamInformation" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabelPositionTitle" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelTeamInformation" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="292" pref="292" max="-2" attributes="0"/>
@@ -48,17 +43,33 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextFieldEmployeeID" min="-2" pref="177" max="-2" attributes="0"/>
-                  <Component id="jTextFieldName" min="-2" pref="183" max="-2" attributes="0"/>
-                  <Component id="jTextFieldAge" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
-                  <Component id="jTextFieldGender" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jTextFieldName" min="-2" pref="183" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelNameComment" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextFieldAge" min="-2" pref="177" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jLabelAgeComment" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextFieldGender" min="-2" pref="177" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelGenderComment" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jTextFieldStartDate" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
-                  <Component id="jTextFieldContactNumber" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextFieldContactNumber" min="-2" pref="177" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelContactNumberComment" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="jTextFieldEmailID" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   <Component id="jTextFieldLevel" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   <Component id="jTextFieldPositionTitle" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   <Component id="jTextFieldTeamInformation" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="352" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="331" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -84,6 +95,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNameComment" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -94,11 +106,13 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldAge" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelAgeComment" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldGender" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelGender" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelGenderComment" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -109,6 +123,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelContactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelContactNumberComment" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -228,16 +243,29 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldName">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNameActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldNameKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldEmployeeID">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAge">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldAgeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldGender">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldGenderKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldStartDate">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldContactNumber">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldContactNumberKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPositionTitle">
     </Component>
@@ -257,6 +285,14 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubmitActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNameComment">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAgeComment">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelGenderComment">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelContactNumberComment">
     </Component>
   </SubComponents>
 </Form>

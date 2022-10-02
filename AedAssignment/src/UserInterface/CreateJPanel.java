@@ -55,6 +55,10 @@ public class CreateJPanel extends javax.swing.JPanel {
         jTextFieldLevel = new javax.swing.JTextField();
         jTextFieldTeamInformation = new javax.swing.JTextField();
         jButtonSubmit = new javax.swing.JButton();
+        jLabelNameComment = new javax.swing.JLabel();
+        jLabelAgeComment = new javax.swing.JLabel();
+        jLabelGenderComment = new javax.swing.JLabel();
+        jLabelContactNumberComment = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -90,6 +94,35 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabelTeamInformation.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
         jLabelTeamInformation.setText("Team Information:");
 
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
+        jTextFieldName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldNameKeyPressed(evt);
+            }
+        });
+
+        jTextFieldAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldAgeKeyPressed(evt);
+            }
+        });
+
+        jTextFieldGender.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldGenderKeyPressed(evt);
+            }
+        });
+
+        jTextFieldContactNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldContactNumberKeyPressed(evt);
+            }
+        });
+
         jButtonSubmit.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButtonSubmit.setText("Submit");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -107,12 +140,9 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelPositionTitle)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelTeamInformation)
-                                .addGap(61, 61, 61))))
+                            .addComponent(jLabelPositionTitle)
+                            .addComponent(jLabelTeamInformation))
+                        .addGap(61, 61, 61))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(292, 292, 292)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,16 +157,28 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGap(69, 69, 69)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelNameComment))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabelAgeComment))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelGenderComment))
                     .addComponent(jTextFieldStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelContactNumberComment))
                     .addComponent(jTextFieldEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldTeamInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 352, Short.MAX_VALUE))
+                .addGap(0, 331, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -155,7 +197,8 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelName))
+                    .addComponent(jLabelName)
+                    .addComponent(jLabelNameComment))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,11 +206,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAge))
+                    .addComponent(jLabelAge)
+                    .addComponent(jLabelAgeComment))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelGender))
+                    .addComponent(jLabelGender)
+                    .addComponent(jLabelGenderComment))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,7 +220,8 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelContactNumber))
+                    .addComponent(jLabelContactNumber)
+                    .addComponent(jLabelContactNumberComment))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEmailID)
@@ -245,17 +291,78 @@ public class CreateJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
+
+    private void jTextFieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNameKeyPressed
+       int chr = evt.getKeyChar();
+if(Character.isDigit(chr)){
+jTextFieldName.setEditable(false);
+jLabelNameComment.setText("not valid");
+}
+else{
+
+jTextFieldName.setEditable(true);
+jLabelNameComment.setText("");
+}
+    }//GEN-LAST:event_jTextFieldNameKeyPressed
+
+    private void jTextFieldAgeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAgeKeyPressed
+        // TODO add your handling code here:
+        char ch = evt.getKeyChar();
+        
+        if(Character.isLetter(ch)){
+            jTextFieldAge.setEditable(false);
+           jLabelAgeComment.setText("Please enter number only");
+            }
+        else{
+         jTextFieldAge.setEditable(true);
+         jLabelAgeComment.setText("");
+        }
+    }//GEN-LAST:event_jTextFieldAgeKeyPressed
+
+    private void jTextFieldGenderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldGenderKeyPressed
+               int chr = evt.getKeyChar();
+               if(Character.isDigit(chr)){
+              jTextFieldGender.setEditable(false);
+               jLabelGenderComment.setText("not valid");
+}
+else{
+
+               jTextFieldGender.setEditable(true);
+               jLabelGenderComment.setText("");
+}
+    }//GEN-LAST:event_jTextFieldGenderKeyPressed
+
+    private void jTextFieldContactNumberKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldContactNumberKeyPressed
+             char ch = evt.getKeyChar();
+        
+             if(Character.isLetter(ch)){
+            jTextFieldContactNumber.setEditable(false);
+           jLabelContactNumberComment.setText("Please enter number only");
+            }
+        else{
+         jTextFieldContactNumber.setEditable(true);
+         jLabelContactNumberComment.setText("");
+        }
+    }//GEN-LAST:event_jTextFieldContactNumberKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAge;
+    private javax.swing.JLabel jLabelAgeComment;
     private javax.swing.JLabel jLabelContactNumber;
+    private javax.swing.JLabel jLabelContactNumberComment;
     private javax.swing.JLabel jLabelEmailID;
     private javax.swing.JLabel jLabelEmployeeID;
     private javax.swing.JLabel jLabelGender;
+    private javax.swing.JLabel jLabelGenderComment;
     private javax.swing.JLabel jLabelLevel;
     private javax.swing.JLabel jLabelName;
+    private javax.swing.JLabel jLabelNameComment;
     private javax.swing.JLabel jLabelPositionTitle;
     private javax.swing.JLabel jLabelStartDate;
     private javax.swing.JLabel jLabelTeamInformation;
