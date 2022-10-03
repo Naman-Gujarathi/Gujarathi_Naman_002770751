@@ -132,6 +132,11 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        jTextFieldEmailID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEmailIDActionPerformed(evt);
+            }
+        });
         jTextFieldEmailID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldEmailIDKeyPressed(evt);
@@ -423,6 +428,10 @@ String s = jTextFieldEmailID.getText();
         jTextFieldImage.setText(imagePath);
 }
     }//GEN-LAST:event_jButtonBrowseActionPerformed
+
+    private void jTextFieldEmailIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailIDActionPerformed
 
    
     

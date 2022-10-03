@@ -10,7 +10,9 @@ import Model.EmployeeHistory;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -69,6 +71,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         ViewJPanelButtonClear = new javax.swing.JButton();
         ViewJPanelButtonUpdate = new javax.swing.JButton();
         jLabelPhoto = new javax.swing.JLabel();
+        jTextFieldSearch = new javax.swing.JTextField();
+        jButtonSearch = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -149,6 +153,13 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButtonSearch.setText("Search");
+        jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,7 +178,11 @@ public class ViewJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(ViewJPanelView)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ViewJPanelDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ViewJPanelDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(155, 155, 155)
+                                .addComponent(jButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(ViewJPanelTextFieldName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,7 +223,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                                                 .addGap(0, 0, Short.MAX_VALUE)))))
                                 .addGap(236, 236, 236)
                                 .addComponent(jLabelPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(292, Short.MAX_VALUE))))
+                        .addContainerGap(50, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(393, 393, 393)
                 .addComponent(jLabel1)
@@ -226,7 +241,9 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(ViewJPanelButtonUpdate)
                     .addComponent(ViewJPanelButtonClear)
                     .addComponent(ViewJPanelView)
-                    .addComponent(ViewJPanelDelete))
+                    .addComponent(ViewJPanelDelete)
+                    .addComponent(jTextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonSearch))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -399,6 +416,13 @@ int selectedRowIndex = ViewJPanelTable.getSelectedRow();
         // TODO add your handling code here:
     }//GEN-LAST:event_ViewJPanelButtonClearActionPerformed
 
+    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
+String query = jTextFieldSearch.getText().toString().toLowerCase();
+        
+        filter (query);
+       
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ViewJPanelAge;
@@ -426,9 +450,11 @@ int selectedRowIndex = ViewJPanelTable.getSelectedRow();
     private javax.swing.JTextField ViewJPanelTextFieldStartDate;
     private javax.swing.JTextField ViewJPanelTextFieldTeamInfo;
     private javax.swing.JButton ViewJPanelView;
+    private javax.swing.JButton jButtonSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelPhoto;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 
     private void fillTable() {
@@ -497,6 +523,13 @@ int selectedRowIndex = ViewJPanelTable.getSelectedRow();
     
     public void updateEmployeTeam(Employee vs, String team){
         vs.setEmpTeamInfo(team);
+    }
+    
+    private void filter(String query){
+    DefaultTableModel model = (DefaultTableModel) ViewJPanelTable.getModel();
+    TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+    ViewJPanelTable.setRowSorter(tr);
+    tr.setRowFilter(RowFilter.regexFilter(query));
     }
 }
     
