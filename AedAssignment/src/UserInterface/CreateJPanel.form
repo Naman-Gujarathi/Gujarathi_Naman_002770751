@@ -49,11 +49,6 @@
                       <Component id="jLabelNameComment" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jTextFieldAge" min="-2" pref="177" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabelAgeComment" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jTextFieldGender" min="-2" pref="177" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabelGenderComment" min="-2" max="-2" attributes="0"/>
@@ -68,6 +63,14 @@
                   <Component id="jTextFieldLevel" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   <Component id="jTextFieldPositionTitle" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   <Component id="jTextFieldTeamInformation" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jTextFieldAge" min="-2" pref="177" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelEmailIDComment" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelAgeComment" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="0" pref="331" max="32767" attributes="0"/>
           </Group>
@@ -129,6 +132,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelEmailID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldEmailID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelEmailIDComment" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -270,6 +274,9 @@
     <Component class="javax.swing.JTextField" name="jTextFieldPositionTitle">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldEmailID">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldEmailIDKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldLevel">
     </Component>
@@ -293,6 +300,8 @@
     <Component class="javax.swing.JLabel" name="jLabelGenderComment">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelContactNumberComment">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEmailIDComment">
     </Component>
   </SubComponents>
 </Form>

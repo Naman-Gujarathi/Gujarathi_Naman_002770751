@@ -7,6 +7,8 @@ package UserInterface;
 
 import Model.Employee;
 import Model.EmployeeHistory;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -59,6 +61,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         jLabelAgeComment = new javax.swing.JLabel();
         jLabelGenderComment = new javax.swing.JLabel();
         jLabelContactNumberComment = new javax.swing.JLabel();
+        jLabelEmailIDComment = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -123,6 +126,12 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        jTextFieldEmailID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldEmailIDKeyPressed(evt);
+            }
+        });
+
         jButtonSubmit.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButtonSubmit.setText("Submit");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -162,10 +171,6 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jLabelNameComment))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabelAgeComment))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextFieldGender, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabelGenderComment))
@@ -177,7 +182,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(jTextFieldEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldPositionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTeamInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldTeamInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEmailIDComment)
+                            .addComponent(jLabelAgeComment))))
                 .addGap(0, 331, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +236,8 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEmailID)
-                    .addComponent(jTextFieldEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEmailID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEmailIDComment))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,7 +360,25 @@ else{
         }
     }//GEN-LAST:event_jTextFieldContactNumberKeyPressed
 
+    private void jTextFieldEmailIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailIDKeyPressed
+String s = jTextFieldEmailID.getText();
+        
+        String emailRegex = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        Pattern emailPat =Pattern.compile(emailRegex, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = emailPat.matcher(s);
+        
+        if(matcher.find() == false){
+           // txtPosition.setEditable(false);
+           jLabelEmailIDComment.setText("Invalid email");
+        }
+        else{
+            jLabelEmailIDComment.setText("");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailIDKeyPressed
 
+   
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSubmit;
     private javax.swing.JLabel jLabel1;
@@ -357,6 +387,7 @@ else{
     private javax.swing.JLabel jLabelContactNumber;
     private javax.swing.JLabel jLabelContactNumberComment;
     private javax.swing.JLabel jLabelEmailID;
+    private javax.swing.JLabel jLabelEmailIDComment;
     private javax.swing.JLabel jLabelEmployeeID;
     private javax.swing.JLabel jLabelGender;
     private javax.swing.JLabel jLabelGenderComment;

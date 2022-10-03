@@ -323,41 +323,47 @@ int selectedRowIndex = ViewJPanelTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) ViewJPanelTable.getModel();
         Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex, 0);
         
-        String empName = model.getValueAt(selectedRowIndex,0).toString();
-        String empId = model.getValueAt(selectedRowIndex,1).toString();
-        String empAge = model.getValueAt(selectedRowIndex,2).toString();
-        String empGender = model.getValueAt(selectedRowIndex, 3).toString();
-        String empStartDate = model.getValueAt(selectedRowIndex,4).toString();
-        String empContactNumber = model.getValueAt(selectedRowIndex,5).toString();
-        String empEmail = model.getValueAt(selectedRowIndex,6).toString();
-        String empLevel = model.getValueAt(selectedRowIndex,7).toString();
-        String empPositionTitle = model.getValueAt(selectedRowIndex,8).toString();
-        String empTeamInfo = model.getValueAt(selectedRowIndex,9).toString();
+        model.setValueAt(ViewJPanelTextFieldName.getText(), selectedRowIndex, 0);
+        model.setValueAt(ViewJPanelTextFieldEmployeeID.getText(), selectedRowIndex, 1);
+        model.setValueAt(ViewJPanelTextFieldAge.getText(), selectedRowIndex, 2);
+        model.setValueAt(ViewJPanelTextFieldGender.getText(), selectedRowIndex, 3);
+        model.setValueAt(ViewJPanelTextFieldContactNumber.getText(), selectedRowIndex, 4);
+        model.setValueAt(ViewJPanelTextFieldEmailID.getText(), selectedRowIndex, 5);
+        model.setValueAt(ViewJPanelTextFieldStartDate.getText(), selectedRowIndex, 6);
+        model.setValueAt(ViewJPanelTextFieldLevel.getText(), selectedRowIndex, 7);
+        model.setValueAt(ViewJPanelTextFieldPositionTitle.getText(), selectedRowIndex, 8);
+        model.setValueAt(ViewJPanelTextFieldTeamInfo.getText(), selectedRowIndex, 9);
         
-        String newEmpName = JOptionPane.showInputDialog(null, "Enter the new name",empName);
-        String newEmpId = JOptionPane.showInputDialog(null, "Enter the new ID",empId);
-        String newEmpAge = JOptionPane.showInputDialog(null, "Enter the new age",empAge);
-        String newEmpGender = JOptionPane.showInputDialog(null, "Enter the new gender",empGender);
-        String newEmpDate = JOptionPane.showInputDialog(null, "Enter the new date",empStartDate);
-        String newEmpContactNumber = JOptionPane.showInputDialog(null, "Enter the new number",empContactNumber);
-        String newEmpEmail = JOptionPane.showInputDialog(null, "Enter the new email",empEmail);
-        String newEmpLevel = JOptionPane.showInputDialog(null, "Enter the new level",empLevel);
-        String newEmpPositionTitle = JOptionPane.showInputDialog(null, "Enter the new position title",empPositionTitle);
-        String newEmpTeamInfo = JOptionPane.showInputDialog(null, "Enter the New Team Info",empTeamInfo);
+        String name = model.getValueAt(selectedRowIndex,0).toString();
+        String id = model.getValueAt(selectedRowIndex,1).toString();
+        String age = model.getValueAt(selectedRowIndex,2).toString();
+        String gender = model.getValueAt(selectedRowIndex, 3).toString();
+        String date = model.getValueAt(selectedRowIndex,4).toString();
+        String number = model.getValueAt(selectedRowIndex,5).toString();
+        String email = model.getValueAt(selectedRowIndex,6).toString();
+        String level = model.getValueAt(selectedRowIndex,7).toString();
+        String positiontitle = model.getValueAt(selectedRowIndex,8).toString();
+        String teaminfo = model.getValueAt(selectedRowIndex,9).toString();
         
-        model.setValueAt(newEmpName, selectedRowIndex, 0);
-        model.setValueAt(newEmpId, selectedRowIndex, 1);
-        model.setValueAt(newEmpAge, selectedRowIndex, 2);
-        model.setValueAt(newEmpGender, selectedRowIndex, 3);
-        model.setValueAt(newEmpDate, selectedRowIndex, 4);
-        model.setValueAt(newEmpContactNumber, selectedRowIndex, 5);
-        model.setValueAt(newEmpEmail, selectedRowIndex, 6);
-        model.setValueAt(newEmpLevel, selectedRowIndex, 7);
-        model.setValueAt(newEmpPositionTitle, selectedRowIndex, 8);
-        model.setValueAt(newEmpTeamInfo, selectedRowIndex, 9);
+        int idNumber = Integer.parseInt(id);
+        int ageNumber= Integer.parseInt(age);
+       
+         
+        updateEmployeName(selectedEmployee,name);
+        updateEmployeID(selectedEmployee,idNumber);
+        updateEmployeAge(selectedEmployee,ageNumber);
+        updateEmployeGender(selectedEmployee,gender);
+        updateEmployeDate(selectedEmployee,date);
+        updateEmployeContact(selectedEmployee,number);
+        updateEmployeEmail(selectedEmployee,email);
+        updateEmployeLevel(selectedEmployee,level);
+        updateEmployePosition(selectedEmployee,positiontitle);
+        updateEmployeTeam(selectedEmployee,teaminfo);
         
         
-        JOptionPane.showMessageDialog(this,"Selected row has been updated.");        // TODO add your handling code here:
+        
+        fillTable();
+       JOptionPane.showMessageDialog(this,"Selected row has been updated.");        // TODO add your handling code here:
         
     }//GEN-LAST:event_ViewJPanelButtonUpdateActionPerformed
 
@@ -431,7 +437,51 @@ int selectedRowIndex = ViewJPanelTable.getSelectedRow();
           
           
         }
+        
+    }
+    public void updateEmployeName(Employee vs, String name ){
+        vs.setEmpName(name);
     }
     
+    public void updateEmployeID(Employee vs, int idNumber ){
+        vs.setEmpId(idNumber);
+    }
+    
+    public void updateEmployeAge(Employee vs, int ageNumber){
+        vs.setEmpAge(ageNumber);
+    }
+    public void updateEmployeGender(Employee vs, String empGender){
+    vs.setEmpGender(empGender);
+    }
+    
+    public void updateEmployeDate(Employee vs, String date){
+        vs.setEmpStartDate(date);
+    }
+
+
+
+       public void updateEmployeContact(Employee vs, String number){
+        vs.setEmpContactNumber(number);
+        
+    }
+    public void updateEmployeEmail(Employee vs, String email){
+        vs.setEmpEmail(email);
+    }
+    
+    public void updateEmployeLevel(Employee vs, String level){
+        vs.setEmpLevel(level);
+    }
+    
+    public void updateEmployePosition(Employee vs,String position){
+        vs.setEmpPositionTitle(position);
+        
+    }
+    
+    public void updateEmployeTeam(Employee vs, String team){
+        vs.setEmpTeamInfo(team);
+    }
 }
+    
+    
+
 
