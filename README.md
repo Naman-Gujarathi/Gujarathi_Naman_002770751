@@ -12,4 +12,10 @@
 
 *Delete Employee Information*
 
+*Update Employee Information*
+
+*Search Employee Information*
+
+*Display Employee Image*
+
 
