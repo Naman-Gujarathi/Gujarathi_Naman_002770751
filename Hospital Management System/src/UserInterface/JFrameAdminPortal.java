@@ -28,7 +28,7 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPaneAdminPortal = new javax.swing.JSplitPane();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelLeftAdminPortal = new javax.swing.JPanel();
         JFrameSystemAdminJButtonDoctor = new javax.swing.JButton();
         JFrameSystemAdminjButtonHospital = new javax.swing.JButton();
         JFrameSystemAdminJButtonEncounter = new javax.swing.JButton();
@@ -42,10 +42,15 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
         jSplitPaneAdminPortal.setBorder(null);
         jSplitPaneAdminPortal.setDividerLocation(250);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 51, 255)));
+        jPanelLeftAdminPortal.setBackground(new java.awt.Color(204, 204, 255));
+        jPanelLeftAdminPortal.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 51, 255)));
 
         JFrameSystemAdminJButtonDoctor.setText("Doctor");
+        JFrameSystemAdminJButtonDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFrameSystemAdminJButtonDoctorActionPerformed(evt);
+            }
+        });
 
         JFrameSystemAdminjButtonHospital.setText("Hospital");
 
@@ -60,13 +65,13 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelLeftAdminPortalLayout = new javax.swing.GroupLayout(jPanelLeftAdminPortal);
+        jPanelLeftAdminPortal.setLayout(jPanelLeftAdminPortalLayout);
+        jPanelLeftAdminPortalLayout.setHorizontalGroup(
+            jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(JFrameSystemAdminJButtonPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JFrameSystemAdminJButtonDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JFrameSystemAdminjButtonHospital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -74,9 +79,9 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
                     .addComponent(JFrameSystemAdminJButtonCredentials, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelLeftAdminPortalLayout.setVerticalGroup(
+            jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JFrameSystemAdminJButtonPatient)
                 .addGap(53, 53, 53)
@@ -90,7 +95,7 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
                 .addGap(202, 202, 202))
         );
 
-        jSplitPaneAdminPortal.setLeftComponent(jPanel2);
+        jSplitPaneAdminPortal.setLeftComponent(jPanelLeftAdminPortal);
 
         jPanelRightAdminPortal.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -98,7 +103,7 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
         jPanelRightAdminPortal.setLayout(jPanelRightAdminPortalLayout);
         jPanelRightAdminPortalLayout.setHorizontalGroup(
             jPanelRightAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 818, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
         );
         jPanelRightAdminPortalLayout.setVerticalGroup(
             jPanelRightAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,6 +130,11 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
 JPanelPatientRecord patientRecord = new JPanelPatientRecord();
         jSplitPaneAdminPortal.setRightComponent(patientRecord );        // TODO add your handling code here:
     }//GEN-LAST:event_JFrameSystemAdminJButtonPatientActionPerformed
+
+    private void JFrameSystemAdminJButtonDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminJButtonDoctorActionPerformed
+JPanelPatientRecord patientRecord = new JPanelPatientRecord();
+        jSplitPaneAdminPortal.setRightComponent(patientRecord );         // TODO add your handling code here:
+    }//GEN-LAST:event_JFrameSystemAdminJButtonDoctorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +177,7 @@ JPanelPatientRecord patientRecord = new JPanelPatientRecord();
     private javax.swing.JButton JFrameSystemAdminJButtonEncounter;
     private javax.swing.JButton JFrameSystemAdminJButtonPatient;
     private javax.swing.JButton JFrameSystemAdminjButtonHospital;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelLeftAdminPortal;
     private javax.swing.JPanel jPanelRightAdminPortal;
     private javax.swing.JSplitPane jSplitPaneAdminPortal;
     // End of variables declaration//GEN-END:variables
