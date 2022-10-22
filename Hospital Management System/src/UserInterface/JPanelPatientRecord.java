@@ -5,6 +5,8 @@
  */
 package UserInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author naman
@@ -34,7 +36,7 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonCreatePatientRecord = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -77,8 +79,13 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
         jButton3.setBackground(new java.awt.Color(51, 51, 255));
         jButton3.setText("View");
 
-        jButton4.setBackground(new java.awt.Color(51, 51, 255));
-        jButton4.setText("Create");
+        jButtonCreatePatientRecord.setBackground(new java.awt.Color(51, 51, 255));
+        jButtonCreatePatientRecord.setText("Create");
+        jButtonCreatePatientRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreatePatientRecordActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("jTextField1");
 
@@ -122,7 +129,7 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
                         .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(jButtonCreatePatientRecord)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +172,7 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButtonCreatePatientRecord))
                 .addGap(136, 136, 136)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,13 +215,20 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
         back.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButtonBackPatientRecordActionPerformed
 
+    private void jButtonCreatePatientRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreatePatientRecordActionPerformed
+      JOptionPane.showMessageDialog(this, "Patient record has been successfully created ");
+        JFramePatientSignUpForm patientSignUpForm = new JFramePatientSignUpForm();
+      patientSignUpForm.setVisible(true);
+      // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCreatePatientRecordActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonBackPatientRecord;
+    private javax.swing.JButton jButtonCreatePatientRecord;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

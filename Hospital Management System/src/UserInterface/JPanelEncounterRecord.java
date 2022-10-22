@@ -79,6 +79,11 @@ public class JPanelEncounterRecord extends javax.swing.JPanel {
 
         jButtonCreateEncounterRecords.setBackground(new java.awt.Color(51, 51, 255));
         jButtonCreateEncounterRecords.setText("Create");
+        jButtonCreateEncounterRecords.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreateEncounterRecordsActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("jTextField1");
 
@@ -207,6 +212,12 @@ public class JPanelEncounterRecord extends javax.swing.JPanel {
         JFrameAdminPortal back = new JFrameAdminPortal();
         back.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButtonBackPatientRecordActionPerformed
+
+    private void jButtonCreateEncounterRecordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreateEncounterRecordsActionPerformed
+      //  JPanelPatientSignUpForm patientSignUpForm = new JPanelPatientSignUpForm();
+       // jSplitPaneAdminPortal.setRightComponent( patientSignUpForm );
+      // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCreateEncounterRecordsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
