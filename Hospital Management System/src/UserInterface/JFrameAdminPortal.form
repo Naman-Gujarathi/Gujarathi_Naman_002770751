@@ -112,11 +112,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hospital"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JFrameSystemAdminjButtonHospitalActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JFrameSystemAdminJButtonEncounter">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Encounter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JFrameSystemAdminJButtonEncounterActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JFrameSystemAdminJButtonCredentials">
               <Properties>

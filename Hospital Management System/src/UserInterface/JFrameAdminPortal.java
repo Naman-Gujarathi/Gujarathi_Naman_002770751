@@ -53,8 +53,18 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
         });
 
         JFrameSystemAdminjButtonHospital.setText("Hospital");
+        JFrameSystemAdminjButtonHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFrameSystemAdminjButtonHospitalActionPerformed(evt);
+            }
+        });
 
         JFrameSystemAdminJButtonEncounter.setText("Encounter");
+        JFrameSystemAdminJButtonEncounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFrameSystemAdminJButtonEncounterActionPerformed(evt);
+            }
+        });
 
         JFrameSystemAdminJButtonCredentials.setText("Credentials");
 
@@ -135,6 +145,16 @@ JPanelPatientRecord patientRecord = new JPanelPatientRecord();
 JPanelPatientRecord patientRecord = new JPanelPatientRecord();
         jSplitPaneAdminPortal.setRightComponent(patientRecord );         // TODO add your handling code here:
     }//GEN-LAST:event_JFrameSystemAdminJButtonDoctorActionPerformed
+
+    private void JFrameSystemAdminjButtonHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminjButtonHospitalActionPerformed
+JPanelHospitalRecord hospitalRecord = new JPanelHospitalRecord();
+        jSplitPaneAdminPortal.setRightComponent(hospitalRecord );        // TODO add your handling code here:
+    }//GEN-LAST:event_JFrameSystemAdminjButtonHospitalActionPerformed
+
+    private void JFrameSystemAdminJButtonEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminJButtonEncounterActionPerformed
+JPanelEncounterRecord encounterRecord = new JPanelEncounterRecord();
+        jSplitPaneAdminPortal.setRightComponent(encounterRecord );         // TODO add your handling code here:
+    }//GEN-LAST:event_JFrameSystemAdminJButtonEncounterActionPerformed
 
     /**
      * @param args the command line arguments
