@@ -5,6 +5,8 @@
  */
 package UserInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author naman
@@ -238,7 +240,7 @@ public class JFramePatientSignUpForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+ JOptionPane.showMessageDialog(this, "You have successfully created record");
 //FramePatientSignUpForm btn = new JFramePatientSignUpForm();
 //btn.setVisible(false);
         // TODO add your handling code here:
