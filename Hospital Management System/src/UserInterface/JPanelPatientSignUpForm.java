@@ -5,6 +5,10 @@
  */
 package UserInterface;
 
+import Model.Patient;
+import Model.PatientHistory;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author naman
@@ -14,8 +18,10 @@ public class JPanelPatientSignUpForm extends javax.swing.JPanel {
     /**
      * Creates new form JPanelSignUpForm
      */
-    public JPanelPatientSignUpForm() {
+    PatientHistory history;
+    public JPanelPatientSignUpForm( PatientHistory history) {
         initComponents();
+         this.history = history;
     }
 
     /**
@@ -220,56 +226,58 @@ public class JPanelPatientSignUpForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPatientSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPatientSubmitActionPerformed
-
-        String personName = jTextFieldPatientName.getText();
+String personName = jTextFieldPatientName.getText();
         String personUserName = jTextFieldPatientUsername.getText();
         String personPassword = jTextFieldPatientPassword.getText();
-        String patientBloodGroup = jComboBoxPatientBloodGroup.getSelectedItem().toString();
+       String patientBloodGroup = jComboBoxPatientBloodGroup.getSelectedItem().toString();
         //String patientGender = jTextFieldStartDate.getText();
         String personContactNumber = jTextFieldPatientContactNumber.getText();
-        //  String empGender = jTextFieldGender.getText();
+      //  String empGender = jTextFieldGender.getText();
         String personEmailID = jTextFieldPatientEmailID.getText();
         String personCity = jTextFieldPatientCity.getText();
-        String patientCommunity  = jComboBoxPatientCommunity.getSelectedItem().toString();
+      String patientCommunity  = jComboBoxPatientCommunity.getSelectedItem().toString();
         String personHouse = jTextFieldPatientHouse.getText();
-
+        
+        
+     
         int personAge = Integer.parseInt(jTextFieldPatientAge.getText());
-
-        //  int emp = Integer.parseInt(jTextFieldEmployeeID.getText());
+         
+      //  int emp = Integer.parseInt(jTextFieldEmployeeID.getText()); 
         //String empName = jTextFieldName.getText();
 
         //FramePatientSignUpForm btn = new JFramePatientSignUpForm();
         //btn.setVisible(false);
         // TODO add your handling code here:
-        Patient vs = history.addNewPatient();
-        vs.setPersonName(personName);
-        vs.setPersonUserName(personUserName);
-        vs.setPersonPassword(personPassword);
-        vs.setPersonAge(personAge);
-        //  vs.setPersonBloodGroup(personBloodGroup);
-        // vs.setPersonContactNumber(personFatherName);
+          Patient vs = history.addNewPatient();
+           vs.setPersonName(personName);
+           vs.setPersonUserName(personUserName);
+           vs.setPersonPassword(personPassword);
+           vs.setPersonAge(personAge);
+         //  vs.setPersonBloodGroup(personBloodGroup);
+          // vs.setPersonContactNumber(personFatherName);
         //   vs.setPersonGender(personGender);
-        vs.setPersonCity(personCity);
-        vs.setPersonHouse(personEmailID);
-        vs.setPersonHouse(personHouse);
-        vs.setPersonContactNumber(personContactNumber);
-        //vs.setPersonHouse(personHouse);
+           vs.setPersonCity(personCity);
+           vs.setPersonHouse(personEmailID);
+            vs.setPersonHouse(personHouse);
+             vs.setPersonContactNumber(personContactNumber);
+             //vs.setPersonHouse(personHouse);
+           
+          // vs.setPersonCommunity(personCommunity);
+        
+         JOptionPane.showMessageDialog(this, "You have successfully created record");
 
-        // vs.setPersonCommunity(personCommunity);
-
-        JOptionPane.showMessageDialog(this, "You have successfully created record");
-
-        jTextFieldPatientName.setText("");
-        jTextFieldPatientUsername.setText("");
-        jTextFieldPatientPassword.setText("");
-        jTextFieldPatientAge.setText("");
-        jTextFieldPatientCity.setText("");
-        // jTextFieldGender.setText("");
-        jTextFieldPatientEmailID.setText("");
-        jTextFieldPatientHouse.setText("");
-        // jTextFieldEmployeeID.setText("");
-        jTextFieldPatientContactNumber.setText("");
-
+          jTextFieldPatientName.setText("");
+          jTextFieldPatientUsername.setText("");
+          jTextFieldPatientPassword.setText("");
+          jTextFieldPatientAge.setText("");
+          jTextFieldPatientCity.setText("");
+         // jTextFieldGender.setText("");
+          jTextFieldPatientEmailID.setText("");
+         jTextFieldPatientHouse.setText("");
+         // jTextFieldEmployeeID.setText("");
+          jTextFieldPatientContactNumber.setText("");
+        
+        
     }//GEN-LAST:event_jButtonPatientSubmitActionPerformed
 
     private void jTextFieldPatientPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPatientPasswordActionPerformed

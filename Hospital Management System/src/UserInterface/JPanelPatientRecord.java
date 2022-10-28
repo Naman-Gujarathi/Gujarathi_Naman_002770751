@@ -223,7 +223,7 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
 
     private void jButtonCreatePatientRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreatePatientRecordActionPerformed
      // JOptionPane.showMessageDialog(this, "Patient record has been successfully created ");
-       JPanelPatientSignUpForm patientSignUpForm = new JPanelPatientSignUpForm();
+       JPanelPatientSignUpForm patientSignUpForm = new JPanelPatientSignUpForm(history);
     sp.setRightComponent(patientSignUpForm);
       // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCreatePatientRecordActionPerformed
