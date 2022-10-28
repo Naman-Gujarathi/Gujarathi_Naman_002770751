@@ -131,8 +131,8 @@ public class JFramePatient extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-JFramePatientSignUpForm1 patientSignUpForm = new JFramePatientSignUpForm1();
-      patientSignUpForm.setVisible(true);        // TODO add your handling code here:
+JFramePatientSignUpForm1 patientSignUpForm1 = new JFramePatientSignUpForm1();
+      patientSignUpForm1.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

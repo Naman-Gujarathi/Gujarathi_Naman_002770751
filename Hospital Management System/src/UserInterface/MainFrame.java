@@ -5,6 +5,8 @@
  */
 package UserInterface;
 
+import Model.PatientHistory;
+
 /**
  *
  * @author naman
@@ -14,8 +16,10 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainFrame
      */
+    PatientHistory history;
     public MainFrame() {
         initComponents();
+        history = new PatientHistory();
     }
 
     /**

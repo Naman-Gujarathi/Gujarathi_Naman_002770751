@@ -69,8 +69,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMainFrameLeftLayout.createSequentialGroup()
                 .addContainerGap(247, Short.MAX_VALUE)
                 .addComponent(jButtonCreate)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonView)
+                .addGap(35, 35, 35)
+                .addComponent(jButtonView, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(473, 473, 473))
         );
 

@@ -5,7 +5,9 @@
  */
 package UserInterface;
 
+import Model.PatientHistory;
 import javax.swing.JOptionPane;
+import javax.swing.JSplitPane;
 
 /**
  *
@@ -15,9 +17,13 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanelPatientRecord
-     */
-    public JPanelPatientRecord() {
+     */JSplitPane sp;
+    PatientHistory history;
+    public JPanelPatientRecord(JSplitPane sp) {
+        this.sp=sp;
         initComponents();
+        
+        history = new PatientHistory();
     }
 
     /**
@@ -216,9 +222,9 @@ public class JPanelPatientRecord extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonBackPatientRecordActionPerformed
 
     private void jButtonCreatePatientRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreatePatientRecordActionPerformed
-      JOptionPane.showMessageDialog(this, "Patient record has been successfully created ");
-        JFramePatientSignUpForm patientSignUpForm = new JFramePatientSignUpForm();
-      patientSignUpForm.setVisible(true);
+     // JOptionPane.showMessageDialog(this, "Patient record has been successfully created ");
+       JPanelPatientSignUpForm patientSignUpForm = new JPanelPatientSignUpForm();
+    sp.setRightComponent(patientSignUpForm);
       // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCreatePatientRecordActionPerformed
 

@@ -137,13 +137,13 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JFrameSystemAdminJButtonPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminJButtonPatientActionPerformed
-JPanelPatientRecord patientRecord = new JPanelPatientRecord();
+JPanelPatientRecord patientRecord = new JPanelPatientRecord(jSplitPaneAdminPortal);
         jSplitPaneAdminPortal.setRightComponent(patientRecord );        // TODO add your handling code here:
     }//GEN-LAST:event_JFrameSystemAdminJButtonPatientActionPerformed
 
     private void JFrameSystemAdminJButtonDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminJButtonDoctorActionPerformed
-JPanelPatientRecord patientRecord = new JPanelPatientRecord();
-        jSplitPaneAdminPortal.setRightComponent(patientRecord );         // TODO add your handling code here:
+//JPanelPatientRecord patientRecord = new JPanelPatientRecord();
+       // jSplitPaneAdminPortal.setRightComponent(patientRecord );         // TODO add your handling code here:
     }//GEN-LAST:event_JFrameSystemAdminJButtonDoctorActionPerformed
 
     private void JFrameSystemAdminjButtonHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFrameSystemAdminjButtonHospitalActionPerformed
