@@ -8,6 +8,7 @@ package UserInterface;
 import Model.Patient;
 import Model.PatientHistory;
 import javax.swing.JOptionPane;
+import javax.swing.JSplitPane;
 
 /**
  *
@@ -18,10 +19,12 @@ public class JPanelPatientSignUpForm extends javax.swing.JPanel {
     /**
      * Creates new form JPanelSignUpForm
      */
+    
     PatientHistory history;
     public JPanelPatientSignUpForm( PatientHistory history) {
         initComponents();
          this.history = history;
+        
     }
 
     /**
@@ -248,7 +251,9 @@ String personName = jTextFieldPatientName.getText();
         //FramePatientSignUpForm btn = new JFramePatientSignUpForm();
         //btn.setVisible(false);
         // TODO add your handling code here:
-          Patient vs = history.addNewPatient();
+//         if (history!=null)
+             Patient vs = new Patient();
+         
            vs.setPersonName(personName);
            vs.setPersonUserName(personUserName);
            vs.setPersonPassword(personPassword);
@@ -263,6 +268,16 @@ String personName = jTextFieldPatientName.getText();
              //vs.setPersonHouse(personHouse);
            
           // vs.setPersonCommunity(personCommunity);
+          
+            if(history!=null)
+          {
+          history.addNewPatient();
+          }
+          else
+          {
+          history = new PatientHistory();
+          history.addNewPatient();
+          }
         
          JOptionPane.showMessageDialog(this, "You have successfully created record");
 

@@ -135,8 +135,11 @@ public class MainFrame extends javax.swing.JFrame {
     private void jMainFrameButtonPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFrameButtonPatientActionPerformed
         // TODO add your handling code here: PatientJPanel viewPanel = new PatientJPanel();
        // jSplitPane1MainFrame.setRightComponent(viewPanel);
-       JFramePatient patient = new JFramePatient();
-       patient.setVisible(true);
+//       JFramePatient patient = new JFramePatient();
+//       patient.setVisible(true);
+       
+       PatientSignInSignUp signIn = new PatientSignInSignUp();
+       signIn.setVisible(true);
     }//GEN-LAST:event_jMainFrameButtonPatientActionPerformed
 
     private void jMainFrameButtonSystemAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMainFrameButtonSystemAdminActionPerformed
