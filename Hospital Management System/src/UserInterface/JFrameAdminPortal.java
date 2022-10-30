@@ -34,6 +34,7 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
         JFrameSystemAdminJButtonEncounter = new javax.swing.JButton();
         JFrameSystemAdminJButtonCredentials = new javax.swing.JButton();
         JFrameSystemAdminJButtonPatient = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanelRightAdminPortal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,24 +76,39 @@ public class JFrameAdminPortal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelLeftAdminPortalLayout = new javax.swing.GroupLayout(jPanelLeftAdminPortal);
         jPanelLeftAdminPortal.setLayout(jPanelLeftAdminPortalLayout);
         jPanelLeftAdminPortalLayout.setHorizontalGroup(
             jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(JFrameSystemAdminJButtonPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JFrameSystemAdminJButtonDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JFrameSystemAdminjButtonHospital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JFrameSystemAdminJButtonEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JFrameSystemAdminJButtonCredentials, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(JFrameSystemAdminJButtonPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JFrameSystemAdminJButtonDoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JFrameSystemAdminjButtonHospital, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JFrameSystemAdminJButtonEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JFrameSystemAdminJButtonCredentials, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanelLeftAdminPortalLayout.setVerticalGroup(
             jPanelLeftAdminPortalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLeftAdminPortalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addComponent(JFrameSystemAdminJButtonPatient)
                 .addGap(53, 53, 53)
                 .addComponent(JFrameSystemAdminJButtonDoctor)
@@ -156,6 +172,12 @@ JPanelEncounterRecord encounterRecord = new JPanelEncounterRecord();
         jSplitPaneAdminPortal.setRightComponent(encounterRecord );         // TODO add your handling code here:
     }//GEN-LAST:event_JFrameSystemAdminJButtonEncounterActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        MainFrame signIn = new  MainFrame();
+       signIn.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,6 +219,7 @@ JPanelEncounterRecord encounterRecord = new JPanelEncounterRecord();
     private javax.swing.JButton JFrameSystemAdminJButtonEncounter;
     private javax.swing.JButton JFrameSystemAdminJButtonPatient;
     private javax.swing.JButton JFrameSystemAdminjButtonHospital;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanelLeftAdminPortal;
     private javax.swing.JPanel jPanelRightAdminPortal;
     private javax.swing.JSplitPane jSplitPaneAdminPortal;

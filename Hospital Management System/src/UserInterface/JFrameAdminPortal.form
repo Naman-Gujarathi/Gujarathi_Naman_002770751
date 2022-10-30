@@ -68,23 +68,33 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="JFrameSystemAdminJButtonPatient" max="32767" attributes="0"/>
-                          <Component id="JFrameSystemAdminJButtonDoctor" alignment="1" max="32767" attributes="0"/>
-                          <Component id="JFrameSystemAdminjButtonHospital" alignment="1" max="32767" attributes="0"/>
-                          <Component id="JFrameSystemAdminJButtonEncounter" alignment="1" max="32767" attributes="0"/>
-                          <Component id="JFrameSystemAdminJButtonCredentials" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="JFrameSystemAdminJButtonPatient" max="32767" attributes="0"/>
+                                  <Component id="JFrameSystemAdminJButtonDoctor" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="JFrameSystemAdminjButtonHospital" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="JFrameSystemAdminJButtonEncounter" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="JFrameSystemAdminJButtonCredentials" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="130" max="32767" attributes="0"/>
                       <Component id="JFrameSystemAdminJButtonPatient" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="JFrameSystemAdminJButtonDoctor" min="-2" max="-2" attributes="0"/>
@@ -135,6 +145,17 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JFrameSystemAdminJButtonPatientActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Back"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

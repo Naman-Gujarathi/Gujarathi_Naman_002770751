@@ -301,7 +301,7 @@ String personName = jTextFieldPatientName.getText();
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
         // TODO add your dling code here:
-        JFramePatient patient = new JFramePatient();
+       PatientSignInSignUp patient = new PatientSignInSignUp();
         patient.setVisible(true);
         // JPanelPatientRecord patientRecord = new JPanelPatientRecord();
         //jSplitPaneAdminPortal.setRightComponent(patientRecord );
