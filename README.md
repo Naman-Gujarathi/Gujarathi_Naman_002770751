@@ -4,19 +4,17 @@
 
 >This application can be used for storing, retrieving an updating the details of patients, doctor, Community Admin, System Admin and Hospital admin 
 
->This application just runs crud operations over the records saved in memory. It run on datastructure Arraylist. In this desktop based application there is no database is used. 
+>The records saved in memory are only subjected to crude processing by this program. The data structure used was an arraylist. There is no database used in this desktop-based program.
 
-In this application we are performing CRUD operation on patients by system admin annd CRU operation on Hospital Admin. Doctor can view records of patient , and can update patient records. Patient can Signin Signup in application and can book a encounter. Community admin can search records on the basis of Community, Area. 
+In this application, system administrators do CRUD operations on patients while hospital administrators execute CRU operations. Doctor has access to patient records and can update them. The patient can log in, register, and schedule an appointment through the app. Records can be searched based on community and area by community admin. 
 
-Patient can book an encounter on the basis of nearest hospital. 
+The patient can schedule an appointment based on the closest hospital. 
 
 ## Functionalities
 
-**Create the encounter for patient. It has dynamic validations for every field**
+**Make the patient's encounter. Each field has dynamic validations.**
 
-**View the data of the patient/doctor by clicking the name field of the table**
-
-**Update the details with similar validations as create functionality**
+**By selecting the table's name field, you may see the patient or doctor's data.**
 
 **Delete the record of the patient/doctor**
 
