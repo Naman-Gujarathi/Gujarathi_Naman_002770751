@@ -1,15 +1,19 @@
-# Gujarathi_Naman_002770751
 
->Employee Information System
+Naman Gujarathi AED Assignment 2
+# Echo_Health
 
-*This project is all about creating MainFrame form, ViewJPanel form, CreatePanel form and its corresponding Java Classes*
+>This application can be used for storing, retrieving an updating the details of patients, doctor, Community Admin, System Admin and Hospital admin 
 
-**Functionalities of Employee Information System Project are:**
+>This application just runs crud operations over the records saved in memory. It run on datastructure Arraylist. In this desktop based application there is no database is used
 
-*create Employee Information*
+## Functionalities
 
-*View Employee Information*
+*Create the data for patient. It has dynamic validations for every field*
 
-*Delete Employee Information*
+*View the data of the patient by clicking the name field of the table*
 
+*Update the details with similar validations as create functionality*
 
+*Delete the record of the patient*
+
+*Search the patient record. It has dynamic search functionality*
