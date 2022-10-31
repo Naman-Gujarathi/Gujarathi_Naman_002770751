@@ -19,3 +19,8 @@ The patient can schedule an appointment based on the closest hospital.
 * Delete the record of the patient/doctor.
 
 * Search the patient/doctor record. It has dynamic search functionality.
+
+
+
+[NamanGujarathi_Class&Sequence Diagram.pdf](https://github.com/Naman-Gujarathi/Gujarathi_Naman_002770751/files/9898052/NamanGujarathi_Class.Sequence.Diagram.pdf)
+
